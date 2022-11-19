@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link rel="stylesheet" href="/css/home.css">
+  </head>
+  <body>
+    <main>
+      <div class="big-wrapper light">
+        <img src="/images/shape.png" alt="" class="shape" />
+
+        <header>
+          <div class="container">
+            <div class="logo">
+              <img src="/images/todoist.png" alt="Logo" />
+              <a href="/">
+                <h3>Todo Untitiled</h3>
+              </a>
+            </div>
+
+            <div class="links">
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="/user/contest">Contests</a></li>
+                <li><a href="/user/todo">My Todos</a></li>
+                <%if(locals.user){%>
+                  <li><a href="/user/userprofile" class="btn"><span><i class="fas fa-user"></i></span><%=username%></a></li>
+                <%}else{%>
+                
+                <li><a href="/user/signin" class="btn">Sign up</a></li>
+                <%}%>
+              </ul>
+            </div>
+
+            <div class="overlay"></div>
+
+            <div class="hamburger-menu">
+              <div class="bar"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="showcase-area">
+          <div class="container">
+            <div class="left">
+              <div class="big-title">
+                <h1>Future is here,</h1>
+                <h1>Start Tracking Your day</h1>
+              </div>
+              <p class="text">
+                “If you want to be happy, 
+                set a goal that commands your thoughts, 
+                liberates your energy and inspires your hopes.”
+                 – Andrew Carnegie. 
+              </p>
+              <div class="cta">
+
+                <%if(locals.user){%>
+              <a href="#" class="btn">Welcome <%=username%></a>
+                <%}else{%>
+                
+              <a href="/user/signin" class="btn">Get Started</a>
+                <%}%>
+
+              </div>
+            </div>
+
+            <div class="right">
+              <img src="/images/person2.png" alt="Person Image" class="person" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- JavaScript Files -->
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

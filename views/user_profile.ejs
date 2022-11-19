@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/userprofile.css">
+</head>
+<body>
+    <h1>Welcome Mate!!</h1>
+    <!-- here this user is set in res.locals during 
+    if(req.isAuthenticated())
+    {
+    res.locals.user=req.user  
+   }
+  // so here we can acces user info using res.local.user
+    -->
+  <p>UserEmail: <%=cuser.email%></p>
+  <p>UserName: <%=cuser.name%></p>
+  <br>
+  <a href="/user/signout">
+    <!-- HTML !-->
+    <button class="button-49" role="button">Sign Out</button>
+ 
+  
+  </a>
+   
+</body>
+</html>

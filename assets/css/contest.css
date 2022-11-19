@@ -1,0 +1,304 @@
+
+
+
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+background: url(/images/back.jpg);
+margin: 0;
+}
+
+/* removing the automatic margin inall tags */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0px;
+}
+
+
+/* navbar */
+
+.navbar{
+	width: 100%;
+  height: 60px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+/* background-color: brown; */
+align-items: center;
+background: linear-gradient(90deg, rgba(175,175,175,1) 0%, rgba(56,54,54,1) 42%, rgba(143,141,139,1) 100%);
+}
+
+.leftnav{
+  width: 28%;
+  height: 95%;
+  /* border: 2px solid yellow; */
+   position: relative;
+   left: -3%;
+}
+
+
+
+
+.titleimg{
+  width: 40%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  /* border: 2px solid red; */
+}
+@keyframes rotating {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.titleimg img{
+  height: 4.7vw;
+  width: 4.7vw;
+  border-radius: 50%;
+  animation-name: rotating;
+animation-timing-function: ease-in-out;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+}
+
+.website_name{
+  width: 40%;
+  margin-left: -7%;
+  font-size: 1.1vw;
+  display: inline-block;
+  /* border: 2px solid green; */
+	vertical-align: middle;
+	color: white;
+}
+
+.website_name h2{
+	font-size: 1.4vw;
+}
+
+/* mid poriton */
+.mid_nav{
+  position: relative;
+  right: 4%;
+  width: 20%;
+  height: 95%;
+  /* border: 2px solid green; */
+  font-size: 1.3vw;
+  text-align: center;
+  color: white;
+
+  animation-name: flexible;
+animation-timing-function: ease-in-out;
+animation-duration: 2s;
+perspective: 10000px;
+transform-style: preserve-3d;
+animation-iteration-count: infinite;
+}
+
+.mid_nav h3{
+  margin-top: 3%;
+}
+
+
+
+
+@keyframes flexible {
+  5% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scaleX(1);
+  }
+
+}
+
+
+
+/* rightportion */
+
+
+.rightnav{
+  width: 20%;
+  height: 95%;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+
+
+.username{
+  /* border: 2px solid red; */
+  color: white;
+  font-size: 1.4rem;
+}
+
+
+
+
+.nav_user{
+  height: 4vw;
+  width: 4vw;
+  /* border: 2px solid green; */
+}
+
+.nav_user img{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* mainsection */
+
+main{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* carousel left section */
+
+.leftsection{
+  margin-right: 2%;
+cursor: pointer;
+}
+
+.leftsection::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.carousel{
+	/* border: 2px solid green; */
+  margin-top: 4%;
+margin-left: 4%;
+display: flex;
+align-items: center;
+}
+
+.cars1{
+	/* border: 2px solid red; */
+      transition: all ease-in-out 0.3s;
+}
+
+.carousel img{
+  height: 23vw;
+  width: 23vw;
+}
+
+
+.cars1:hover{
+  box-shadow: 0px 0px 3px 3px rgb(144, 144, 144);
+	transform: scale(1.2);
+}
+
+
+/* lateseetsongs section*/
+
+
+.latestcontainer{
+  /* border: 1px solid white; */
+  /* width: 97%; */
+  margin-top: 3%;
+
+  
+}
+
+.latestcontainer::-webkit-scrollbar { 
+    display: none; 
+}
+
+.latestheader{
+  color: white;
+  font-size: 1.5vw;
+  margin-top: 3%;
+  margin-left: 4%;
+}
+.latestheader h1{
+font-size: 1.8rem;
+}
+
+
+.latestrelease{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  /* border: 3px solid green; */
+  margin-top: 1%;
+  margin-left: 5%;
+  width: 95%;
+}
+
+.achip{
+  text-decoration: none;
+}
+
+.latest1{
+  display: flex;
+  flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+  color: white;
+  /* box-shadow: 0px 0px 5px 5px white; */
+  /* border: 2px solid red; */
+  width: 30vw;
+  padding: 2px;
+ margin: 6px 0 ;
+}
+
+.latestleft{
+		/* border: 2px solid orange; */
+		height: 95%;
+	width: 30%;
+}
+
+
+.latestleft img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+.latestright{
+	height: 95%;
+    width: 65%;
+	/* border: 2px solid red; */
+	font-size: 1.4vw;
+}
+.latestright p{
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+ 
+ .latest1:hover {
+	box-shadow: 0px 0px 4px 4px white;
+} 
+
+
+.upcoming{
+  display: flex;
+  margin-top: 3%;
+
+  
+}
+
+.upcoming::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+
