@@ -9,7 +9,7 @@ try {
     
   if(req.user)
   {
-   
+   console.log("we are in home after singin and in req we have",req.user);
  let user= await User.findById(req.user._id);
  console.log(user);
 if(user)
