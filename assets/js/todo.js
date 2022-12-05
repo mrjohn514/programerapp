@@ -2,33 +2,47 @@
 {
 
   const element = document.getElementsByClassName("midr");
-  var checkbox = document.getElementsByClassName('checkbox');
-  const a=document.getElementsByClassName('work');
-  const b=document.getElementsByClassName('pdate');
-  const cm=document.getElementsByClassName('chipmid');
+  // const a=document.getElementsByClassName('work');
+  // const b=document.getElementsByClassName('pdate');
+  // const cm=document.getElementsByClassName('chipmid');
   
   const delbtn=document.getElementsByClassName('deltebtn')[0];
   
     
   
-  for(let i=0;i<checkbox.length;i++)
+  let trigercheck=function()
   {
-  checkbox[i].addEventListener('change', function(event) {
+ 
+    let checkbox = document.getElementsByClassName('checkbox');
+    for(let i=0;i<checkbox.length;i++)
+    {
+    checkbox[i].addEventListener('change', function(event) {
   
-    if (this.checked) {
-      element[i].style.display= "none" 
-      a[i].style="text-decoration: line-through;"
-      b[i].style="text-decoration: line-through;"
-    } else {
-      element[i].style.display = "block";
-      a[i].style="text-decoration: none;"
-      b[i].style="text-decoration: none;"
+       //if not do like this then only cheking one all previous element a b got changed so 
+       //to change only related elemnt a and b we select them only 
+       //this.value return value of checkbox 
+      console.log(this.value);
+      let element=$('#todo-chip-'+ this.value +' .midr')
+      let a=$('#todo-chip-'+ this.value+' .work');
+      let b=$('#todo-chip-'+ this.value+' .pdate');
+        
+      if (this.checked) {
+
+        element[0].style.display= "none" 
+        a[0].style="text-decoration: line-through;"
+        b[0].style="text-decoration: line-through;"
+      } else {
+        element[0].style.display = "block";
+        a[0].style="text-decoration: none;"
+        b[0].style="text-decoration: none;"
+      }
+    });
+    
+    
+    
     }
-  });
-  
-  
-  
   }
+  trigercheck();
 
  
   let mytodoconatiner=$(".mytodos").eq(0);
@@ -47,11 +61,38 @@ $.ajax({
   
   success: function(data){      
   
-  console.log(data.data);
+  console.log("creatd todo",data.data);
 
   let newTodo = newTodoDom(data.data);
   
+   console.log("id",data.data.todo._id);
+  
   mytodoconatiner.prepend(newTodo);
+  trigercheck();
+  // var atodo=$('#todo-chip-'+ data.data.todo._id);
+  // console.log("hi",atodo);
+  // var checkbox=$('#todo-chip-'+ data.data.todo._id +' input:checkbox:first');
+  // var element=$('#todo-chip-'+ data.data.todo._id +' .midr')
+  // var a=$('#todo-chip-'+ data.data.todo._id+' .work');
+  // var b=$('#todo-chip-'+ data.data.todo._id+' .pdate');
+
+  // console.log("check is",b[0]);
+
+  // checkbox[0].addEventListener('change', function(event) {
+  
+  //   if (this.checked) {
+  //     element[0].style.display= "none" 
+  //     a[0].style="text-decoration: line-through;"
+  //     b[0].style="text-decoration: line-through;"
+  //   } else {
+  //     element[0].style.display = "block";
+  //     a[0].style="text-decoration: none;"
+  //     b[0].style="text-decoration: none;"
+  //   }
+  // });
+
+
+
 
   
   },
@@ -109,6 +150,7 @@ $.ajax({
  
  success: function(data){      
  
+ console.log("delted todo",data.data);
 
  if( data.data.todos==undefined)
  {
