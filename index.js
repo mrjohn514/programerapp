@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser')
 
 // Import the "mongoose" module, which is an Object Data Modeling (ODM) library for MongoDB,
 //and establish a connection to the database using the configuration settings in "./config/mongoose.js".
-const db = require('./config/mongoose')
+const connectDB = require('./config/mongoose')
 
 // Import the "express-session" middleware module,
 // which is used for managing user sessions in Express.js applications
